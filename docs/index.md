@@ -5,7 +5,7 @@ You can use the [editor on GitHub](https://github.com/kevinfreyberg/Qiskit-Crash
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Test Button
-Check [this](https://kevinfreyberg.github.io/Qiskit-Crash-Course/docs/getting-started/) out!
+Check [this](https://kevinfreyberg.github.io/Qiskit-Crash-Course/getting-started/) out!
 
 ### Markdown
 
