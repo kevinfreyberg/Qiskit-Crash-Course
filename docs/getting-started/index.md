@@ -10,5 +10,11 @@ To enter the Quantum Lab, select this icon on the left panel:
 
 ![image](images/icon.png)
 
+Simulations on the Quantum Lab are performed with the help of Project Jupyter. To start, select this following icon to create a new notebook:
 
+![image](images/notebook.png)
+
+Select your new notebook and open it. You will be a presented with a screen like so:
+
+![image](images/ide.png)
 
