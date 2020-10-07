@@ -18,3 +18,30 @@ Select your new notebook and open it. You will be a presented with a screen like
 
 ![image](images/ide.png)
 
+In the selected cell, type in the following code and run: 
+```
+# Creates a new Quantum Circuit on the quantum register 
+q_circuit = QuantumCircuit(2, 2)
+
+# Adds a Hadamard (H) gate on a qubit. In this case, qubit 0.
+q_circuit.h(0)
+
+# Adds a controlled NOT gate (CNOT) on control qubit 0, target qubit 1
+q_circuit.cx(0, 1)
+
+# Maps qubit measurement to classical bits
+q_circuit.measure([0,1], [0, 1])
+
+# Draws the circuit
+q_circuit.draw()
+```
+
+At this point, you're left with a visual representation of the circuit. However, this alone will not prove to be too useful. 
+
+
+
+
+
+
+
+
