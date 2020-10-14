@@ -23,10 +23,9 @@ You can use the *QuantumCircuit* object to create qubits by passing a number as 
 For example:
 
 ```python
-my_circuit = QuantumCircuit(1) # Creates a quantum circuit with one qubit1: q0
+my_circuit = QuantumCircuit(1) # Creates a quantum circuit with one qubit
 ```
-
-An important thing to note is that qiskit always initializes qubits into the state |0⟩. If you want to manually change the initialization state of a qubit, you can use the *initialize()* method. For example, if we want to intialize one of our qubits to be in the state |1⟩, we can write:
+An important thing to note is that qiskit always initializes qubits into the state `|0⟩`. If you want to manually change the initialization state of a qubit, you can use the *initialize()* method. For example, if we want to intialize one of our qubits to be in the state `|1⟩`, we can write:
 
 ```python
 my_circuit = QuantumCircuit(1)
