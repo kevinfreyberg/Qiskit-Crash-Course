@@ -6,7 +6,7 @@ In this chapter, we will introduce Qiskit and create a basic quantum circuit tha
 
 
 
-### Quantum Bits (qubits)
+## Quantum Bits (qubits)
 
 As you might know, classical bits are represented with either 0 or 1. For the longest time, we have utilized classical 
 bits for many different applications of computing. However, they contain some limitations--adversaries can copy them.
@@ -17,7 +17,7 @@ quantum computing endeavor.
 
 Remember when I mentioned classical bits can be either 0 or 1? What about qubits? 
 
-### Qubit states
+## Qubit states
 Qubits can be 0, 1, or a **superposition** of 0 and 1. Their states are represented through ket-notation:
 
 ```
@@ -34,7 +34,7 @@ from qiskit import QuantumCircuit, execute, Aer, IBMQ, ClassicalRegister, Quantu
 import math
 ```
 
-### Qubits in Qiskit
+## Qubits in Qiskit
 You can use the *QuantumCircuit* object to create qubits by passing a number as an argument (the number of qubits you want).
 For example:
 
@@ -51,7 +51,7 @@ circuit = QuantumCircuit(qubit0, classic_bit0)
 ```
 *QuantumRegister* and *ClassicalRegister* take two arguments: a number of qubits/bits, and a label for the circuit drawing.
 
-### Initialized states
+## Initialized states
 An important thing to note is that qiskit always initializes qubits into the state `|0⟩`. If you want to manually change the initialization state of a qubit, you can use the *initialize()* method. For example, if we want to intialize one of our qubits to be in the state `|1⟩`, we can write:
 
 ```python
@@ -74,9 +74,9 @@ This is **not** valid:
 ```python
 state = [math.sqrt(1/4), math.sqrt(1/4)]
 ```
-For now, let us consider the state: `[math.sqrt(1/2), math.sqrt(1/2)]`.
+For now, let us consider the state: `[math.sqrt(1/2), math.sqrt(1/2)]`. (This is equivalent to a Hadamard gate...more on that later)
 
-### Z measurements
+## Z measurements
 In seminar, you have been introduced to the notion of a *Z measurement*. Recall that a Z measurement takes a quantum state and maps it to a 0 (with probability α) or 1 (with probability β). Luckily, this is easy to do in Qiskit.
 
 ```python
@@ -88,7 +88,7 @@ At this point, we have:
 - Initialized the qubit to a state
 - Performed a Z-measurement
 
-### Simulating
+## Simulating
 
 All that's left to do is to simulate our circuit. This is done through *Aer*, a standard Qiskit library. Aer will take our circuit and simulate it as many times as we want (in this case, 1000). 
 
@@ -104,7 +104,16 @@ circuit.draw()
 
 Run the circuit and read the output. Notice that out of 1000, the amount of 0s and 1s are very close to 500 (or even exactly 500). This demonstrates that ~50% of the time, we will observe a 0 while ~50% of the time, we will observe a 1.
 
-If we instead had our state as: `[math.sqrt(1/3), math.sqrt(2/3)]`, we would observe that ~33% of simulation runs will result in 0, and ~67% will result in 1. 
+If we instead had our state as: `[math.sqrt(1/3), math.sqrt(2/3)]`, we would observe that ~33% of simulation runs will result in 0, and ~67% will result in 1.
+
+## Conclusion
+In this git repository, there is a folder containing all programs written in this guide. Feel free to use them as "skeletons" for your future use.
+
+I would encourage you to tinker with this circuit to develop a deeper understanding of how it works. 
+
+
+
+
 
 
 
