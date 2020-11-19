@@ -8,7 +8,13 @@ In this chapter, we will introduce quantum logic gates and how to apply them wit
 
 Remember in the previous chapter where we mentioned superposition? 
 
-Hadamard gates put qubits into a superposition. Luckily for us, this is easy to do in Qiskit. Let us demonstrate this through a basic circuit:
+Hadamard gates put qubits into a superposition.
+
+This is represented by a a *Hadamard Matrix*:
+
+![image](images/hadamard.png)
+
+Luckily for us, this is easy to do in Qiskit. Let us demonstrate this through a basic circuit:
 
 ```python
 qubit0 = QuantumRegister(1, name = "qubit0") # Create a qubit on the quantum register
@@ -33,6 +39,10 @@ An important thing to note is that the Hadamard gate allows you to transform sta
 
 The X-gate is a NOT gate in quantum computing. It's pretty intuitive and will flip the state of a qubit.
 
+This is represented by a *Pauli-X Matrix*:
+
+![image](images/x.png)
+
 This is what it looks like in Qiskit:
 
 ```python
@@ -44,7 +54,13 @@ Essentially, the X-gate maps the basis state `|0⟩` to `|1⟩`, and vice-versa.
 
 ## The Y-gate
 
-The Y-gate is used for rotation around the Y-axis of the Bloch sphere (by pi radians). In Qiskit, it is represented by:
+The Y-gate is used for rotation around the Y-axis of the Bloch sphere (by pi radians). 
+
+This is represented by a *Pauli-Y Matrix*:
+
+![image](images/y.png)
+
+In Qiskit, it is represented by:
 
 ```python
 circuit.y(qubit)
@@ -54,7 +70,13 @@ The Y-gate maps the basis states `|0⟩` to `i|1⟩`, and `|1⟩` to `-i|0⟩`.
 
 ## The Z-gate
 
-The Z-gate is known as a phase-flip and is used for rotation around the Z-axis of the Bloch sphere (by pi radians). In Qiskit, it is represented by:
+The Z-gate is known as a phase-flip and is used for rotation around the Z-axis of the Bloch sphere (by pi radians).
+
+This is represented by a *Pauli-Z Matrix*:
+
+![image](images/z.png)
+
+In Qiskit, it is represented by:
 
 ```python
 circuit.z(qubit)
@@ -65,6 +87,10 @@ The Z-gate does not affect the basis state `|0⟩`, but maps the basis state `|1
 ## Phase Shift Gates
 
 Phase shift gates are important in the creation of advanced quantum algorithms. The R(phi)-gate is used to perform rotations (defined by phi radians) on the Bloch sphere. In fact, the Z-gate is a special case of the R(phi)-gate, where phi = pi. We will continue demonstrate this as we go on.
+
+This is represented by the following matrix:
+
+![image](images/rphi.png)
 
 In Qiskit, the R(phi)-gate is represented by:
 
@@ -96,7 +122,7 @@ It might not be obvious at first, but you can actually recreate the Sdg gate wit
 
 ## Bringing it all together
 
-By applying various combinations of the gates in this chapter, you can actually recreate some of them. For example, the X-gate is  simple to implement using just Hadamard and Z-gates. In fact, it is just the relation: X = HZH.
+By applying various combinations of the gates in this chapter, you can actually recreate some of them. For example, the X-gate is simple to implement using just Hadamard and Z-gates. In fact, it is just the relation: X = HZH.
 
 Let's try it:
 
@@ -128,7 +154,7 @@ We initialized our qubit to be in the `|1⟩` state and since the X-gate acts li
 
 Okay, that might have been too simple. 
 
-Let's try and create the Y-gate using just the R(phi) and H-gates. A simple way to recreate the Y-gate is through the relation: Y = H(Sdg). Can you implement this without explicitly using Sdg?
+Let's try and create the Y-gate using just the R(phi) and H-gates. A simple way to recreate the Y-gate is through the relation: Y = SX(Sdg). Can you implement this without explicitly using the Sdg method?
 
 ```python
 
@@ -147,7 +173,6 @@ state = [0, 1] # This is a vector in the form of a list: [alpha, beta]
 circuit.initialize(state, qubit0) # Initializes qubit0 to state |1⟩
 
 # Refer to the relation defined above and write your code below using only R(phi) and H-gates. 
-
 
 
 circuit.measure(qubit0, classic_bit0) # Perform Z-measurement
