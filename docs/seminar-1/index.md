@@ -1,9 +1,8 @@
-# Seminar 1: Introduction to Quantum Computing
+# Episode I: Introduction to Quantum Computing
 
 In this chapter, we will introduce Qiskit and create a basic quantum circuit that:
 - Places a qubit into superposition
 - Performs a Z-measurement on the qubit
-
 
 
 ## Quantum Bits (qubits)
@@ -93,7 +92,7 @@ At this point, we have:
 All that's left to do is to simulate our circuit. This is done through *Aer*, a standard Qiskit library. Aer will take our circuit and simulate it as many times as we want (in this case, 1000). 
 
 ```python
-backend = Aer.get_backend('qasm_simulator') # Loads the simulator
+backend = Aer.get_backend('qasm_simulator') # Loads the qasm simulator
 job = execute(circuit, backend, shots=1000) # Simulate our circuit 1000 times
 result = job.result() # Retrieve results from simulation
 data = result.get_counts() # Retrieve counts
@@ -106,10 +105,21 @@ Run the circuit and read the output. Notice that out of 1000, the amount of 0s a
 
 If we instead had our state as: `[math.sqrt(1/3), math.sqrt(2/3)]`, we would observe that ~33% of simulation runs will result in 0, and ~67% will result in 1.
 
+*Note*: As we progress through this guide, you might find it easier to wrap your code up into functions like so:
+
+```python
+def qasm(circuit):
+    backend = Aer.get_backend('qasm_simulator') # Loads the qasm simulator
+    job = execute(circuit, backend, shots=1000).result().get_counts()
+    print("Counts: ", job) # Present data
+```
+
 ## Conclusion
 In this git repository, there is a folder containing all programs written in this guide. Feel free to use them as "skeletons" for your future use.
 
-I would encourage you to tinker with this circuit to develop a deeper understanding of how it works. 
+I would encourage you to tinker with this circuit to develop a deeper understanding of how it works.
+
+Onward to [Episode II](https://kevinfreyberg.github.io/Qiskit-Crash-Course/seminar-2/)!
 
 
 

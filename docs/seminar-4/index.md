@@ -1,62 +1,75 @@
-# Seminar 4: Applying Everything We've Learned--Quantum Teleportation!
+# Episode IV: Entanglement
 
-In this chapter, we will introduce an interesting algorithm: Quantum Teleportation. By the end of this chapter, we will have created a circuit that:
-- Uses our knowledge of Qiskit to simulate teleportation
+In this chapter, we will introduce the use of multiple qubits and how to manipulate them in Qiskit. At the end of this chapter, we will have created a circuit that:
+- Creates a bell pair
 
-## Quantum Teleportation?
+## The CNOT Gate
 
-No, we aren't referring to interdimensional travel. However, quantum teleportation is an interesting notion of sending quantum information through the aid of classical communication and entangled quantum states.
-
-The backbone of teleportation is the no-cloning theorem in quantum mechanics, which states that you cannot make a copy of an unknown quantum state. We will leverage this in our simulation.
-
-## The Algorithm
-
-The following snippet outlines the entire algorithm. It might seem slightly esoteric at first, but we will be able to break this down into Qiskit.
-
-```
-Suppose A, B, and |Psi> are qubits. |Psi> = alpha|0> + beta|1>
-
-Alice wants to send qubit state |Psi> to Bob.
-
-Steps:
-1. Create entangled pair of qubits (Bell pair)
-	-Transfer qubit A to X-basis ( |+> and |-> ) by applying a Hadamard gate. Apply Hadamard to |Psi>
-	-Apply a CNOT gate with A as the control, and B as a target.
-	-Alice is given qubit A and qubit |Psi>. Bob is given qubit B.
-
-2. Alice applies a CNOT gate with |Psi> as the control, and qubit A as the target.
-
-3. Alice measures qubit A and |Psi> into two classical bits. She sends these two classical bits to Bob.
-
-4. Bob applies certain gates based on the state of the classical bits:
-	 00 -> Nothing
-	 01 -> X gate
-	 10 -> Z gate
-	 11 -> ZX gate
-```
-
-## Creating the circuit in Qiskit
-
-Let us first initialize our circuit with the right amount of qubits (3) and classical bits (2). 
+This one's important. The CNOT gate works on two qubits, and is the backbone of creating a bell pair. The first qubit is known as the control  and the second qubit as the target. In Qiskit, it is represented by:
 
 ```python
-cr1 = ClassicalRegister(1, name = "cr1")
-cr2 = ClassicalRegister(1, name = "cr2")
-qubit0 = QuantumRegister(1, name = "qubit0")
-qubit1 = QuantumRegister(1, name = "qubit1")
-qubit2 = QuantumRegister(1, name = "qubit2")
-
-circuit = QuantumCircuit(qubit0, qubit1, qubit2, cr1, cr2)
+circuit.cx(control, target)
 ```
 
-Our first step is to create a Bell pair between qubit A and B, which is just a pair of entangled qubits. 
+At first glance, the CNOT gate might appear to have some funky behavior. For one, it leaves the control qubit unchanged. Secondly, it performs an X-gate on the target qubit if the state of the control is `|1⟩`. 
 
-This is done by applying a Hadamard gate on qubit A, and a CNOT gate with A as the control and B as the target:
+However, when we deal with entanglement, we have a lot to thank the CNOT gate for.
+
+## Bell pair
+
+In simple terms, a Bell pair is an entangled state of two qubits. 
+
+The structure of a Bell pair is quite simple. Among two-qubits, it is created by applying a Hadamard gate on the control qubit, and then applying a CNOT gate on the control and target.
+
+Let's try it in Qiskit:
 
 ```python
-circuit.h(qubit1)
-circuit.cnot(qubit1, qubit2)
+qubit0 = QuantumRegister(1, name = "qubit0") # Create a qubit on the quantum register
+qubit1 = QuantumRegister(1, name = "qubit0") # Create a qubit on the quantum register
+
+classic_bit0 = ClassicalRegister(1, name = "classic_bit0") # Create a classic bit on the classical register
+circuit = QuantumCircuit(qubit0, qubit1, classic_bit0) # Create a quantum circuit from our qubit/bit
+
+circuit.h(qubit0) # Apply a Hadamard
+circuit.cx(qubit0, qubit1) # Apply a CNOT
 ```
+
+As usual, let's slap everything into a function!
+
+```python
+def bell_pair(circuit, qubit0, qubit1): # entangles qubits
+    circuit.h(qubit0) 
+    circuit.cx(qubit0,qubit1) 
+```
+
+We can then build our circuit and simulate the results:
+
+```python
+def simulate(circuit): # this is a helper function for simulating and spitting out counts
+    backend = Aer.get_backend('statevector_simulator')
+    job = execute(circuit, backend, shots=1000).result().get_counts() # Simulate our circuit 1000 times
+    return plot_histogram(job)
+    
+qubit0 = QuantumRegister(1, name = "qubit0") # Create a qubit on the quantum register
+qubit1 = QuantumRegister(1, name = "qubit1") # Create a qubit on the quantum register
+
+classic_bit0 = ClassicalRegister(1, name = "classic_bit0") # Create a classic bit on the classical register
+circuit = QuantumCircuit(qubit0, qubit1) # Create a quantum circuit from our qubit/bit
+
+bell_pair(circuit, qubit0, qubit1)
+simulate(circuit)
+```
+
+After this process, there are only two possible states: `|00⟩` and `|11⟩`. Essentially, this means that the qubits are *entangled*. 
+
+
+## Entanglement of qubits
+
+You might have heard of quantum entanglement in a science-fiction movie as some sort of mystical, complicated phenomenon. However, in reality, it isn't *too* complex. In fact, entanglement (let us assume there are two qubits in a Bell state) just means that two qubits share the same quantum state.
+
+This notion of quantum entanglement is used in quantum algorithms, such as Quantum teleportation. In the next chapter, we will actually simulate the teleportation of qubit states. 
+
+
 
 
 

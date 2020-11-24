@@ -7,7 +7,7 @@ This an introduction to Qiskit, an open-source quantum computing framework from 
 Please make sure you are importing the correct modules when designing your circuits. In this guide, you'll be expected to follow the following import structure:
 
 ```python
-from qiskit import QuantumCircuit, execute, Aer, IBMQ, ClassicalRegister, QuantumRegister
+from qiskit import *
 from qiskit.compiler import transpile, assemble
 from qiskit.tools.jupyter import *
 from qiskit.visualization import *

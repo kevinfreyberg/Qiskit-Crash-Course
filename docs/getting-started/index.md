@@ -41,7 +41,7 @@ Congratulations, you have just completed your first quantum circuit!
 
 At this point, you're probably perplexed by the mess you pasted in. Don't worry, you aren't expected to know what these functions do right off the bat. As we journey through this guide, you will understand every aspect of this program and *way* more.
 
-With that being said, let's set off to [Seminar 1](https://kevinfreyberg.github.io/Qiskit-Crash-Course/seminar-1/)!
+With that being said, let's set off to [Episode I](https://kevinfreyberg.github.io/Qiskit-Crash-Course/seminar-1/)!
 
 
 
