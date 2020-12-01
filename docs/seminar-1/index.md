@@ -121,7 +121,7 @@ I would encourage you to tinker with this circuit to develop a deeper understand
 
 Onward to [Episode II](https://kevinfreyberg.github.io/Qiskit-Crash-Course/seminar-2/)!
 
-
+Return to the [Homepage](https://kevinfreyberg.github.io/Qiskit-Crash-Course/)!
 
 
 

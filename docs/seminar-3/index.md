@@ -187,6 +187,7 @@ At this point, we have recreated the X and Y-gates in Qiskit. In the next episod
 
 Let us head on to [Episode IV](https://kevinfreyberg.github.io/Qiskit-Crash-Course/seminar-4/)!
 
+Return to the [Homepage](https://kevinfreyberg.github.io/Qiskit-Crash-Course/)!
 
 
 

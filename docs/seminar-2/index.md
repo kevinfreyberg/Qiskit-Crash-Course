@@ -170,7 +170,7 @@ As we travel further along our journey, we will discuss changing bases and expan
 
 For now, let us head over to [Episode III](https://kevinfreyberg.github.io/Qiskit-Crash-Course/seminar-3/)!
 
-
+Return to the [Homepage](https://kevinfreyberg.github.io/Qiskit-Crash-Course/)!
 
 
 

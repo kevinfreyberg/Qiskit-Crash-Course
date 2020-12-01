@@ -69,7 +69,9 @@ You might have heard of quantum entanglement in a science-fiction movie as some 
 
 This notion of quantum entanglement is used in quantum algorithms, such as Quantum teleportation. In the next chapter, we will actually simulate the teleportation of qubit states. 
 
+Now, we shall travel to the Unknown Regions of [Episode V](https://kevinfreyberg.github.io/Qiskit-Crash-Course/seminar-5/)!
 
+Return to the [Homepage](https://kevinfreyberg.github.io/Qiskit-Crash-Course/)!
 
 
 
