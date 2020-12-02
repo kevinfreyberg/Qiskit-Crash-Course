@@ -1,11 +1,11 @@
-# Episode IV: Entanglement
+# Episode IV: Quantum Entanglement
 
 In this chapter, we will introduce the use of multiple qubits and how to manipulate them in Qiskit. At the end of this chapter, we will have created a circuit that:
 - Creates a bell pair
 
 ## The CNOT Gate
 
-This one's important. The CNOT gate works on two qubits, and is the backbone of creating a bell pair. The first qubit is known as the control  and the second qubit as the target. In Qiskit, it is represented by:
+This one's important. The CNOT gate works on two qubits, and is the backbone of creating a bell pair. The first qubit is known as the control  and the second qubit as the target. In Qiskit, it is represented by the *.cx()* method:
 
 ```python
 circuit.cx(control, target)
@@ -34,7 +34,7 @@ circuit.h(qubit0) # Apply a Hadamard
 circuit.cx(qubit0, qubit1) # Apply a CNOT
 ```
 
-As usual, let's slap everything into a function!
+Let's slap everything into a function!
 
 ```python
 def bell_pair(circuit, qubit0, qubit1): # entangles qubits

@@ -43,14 +43,13 @@ This is represented by a *Pauli-X Matrix*:
 
 ![image](images/x.png)
 
-This is what it looks like in Qiskit:
+In Qiskit, you can apply the X-gate using the *.x()* method:
 
 ```python
 circuit.x(qubit)
 ```
 
 Essentially, the X-gate maps the basis state `|0⟩` to `|1⟩`, and vice-versa.
-
 
 ## The Y-gate
 
@@ -60,7 +59,7 @@ This is represented by a *Pauli-Y Matrix*:
 
 ![image](images/y.png)
 
-In Qiskit, it is represented by:
+In Qiskit, it is represented by the *.y()* method:
 
 ```python
 circuit.y(qubit)
@@ -76,7 +75,7 @@ This is represented by a *Pauli-Z Matrix*:
 
 ![image](images/z.png)
 
-In Qiskit, it is represented by:
+In Qiskit, it is represented by the *.z()* method:
 
 ```python
 circuit.z(qubit)
@@ -92,7 +91,7 @@ This is represented by the following matrix:
 
 ![image](images/rphi.png)
 
-In Qiskit, the R(phi)-gate is represented by:
+In Qiskit, the R(phi)-gate is represented by the *.rz()* method:
 
 ```python
 circuit.rz(phi, qubit) # where phi is in radians
@@ -106,13 +105,13 @@ They map basis states `|0⟩` to `|0⟩` and `|1⟩` to `e^(i*phi)|1⟩`.
 
 The S-gate is a variation of the R(phi)-gate where `phi = pi/2`. Essentially, it performs a 90-degree z-axis rotation on the Bloch sphere.
 
-In Qiskit, it is represented by:
+In Qiskit, it is represented by the *.s()* method:
 
 ```python
 circuit.s(qubit)
 ```
 
-The conjugate transpose of the S-gate is known as the Sdg gate (or S-dagger). You can use it in Qiskit with:
+The conjugate transpose of the S-gate is known as the Sdg gate (or S-dagger). You can use it in Qiskit with the *.sdg()* method:
 
 ```python
 circuit.sdg(qubit)

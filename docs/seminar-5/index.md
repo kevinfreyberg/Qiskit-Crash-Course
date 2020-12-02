@@ -69,9 +69,6 @@ We then want to initialize our qubit "Psi" with the correct quantum state. Let u
 
 ```python
 psi = [0, 1] # We want to send |1> to Bob
-initial_gate = Initialize(psi)
-initial_gate.label = "Initial Gate"
-
 circuit.initialize(psi, qubit0) # Set the quantum state to psi
 ```
 
@@ -79,14 +76,22 @@ circuit.initialize(psi, qubit0) # Set the quantum state to psi
 
 Following the algorithm, we must then create a Bell pair between qubit A and B. Recall from [Episode IV](https://kevinfreyberg.github.io/Qiskit-Crash-Course/seminar-4/) that a Bell pair just refers to a pair of entangled qubits. 
 
-This is straightforward to do and can be done by applying a Hadamard gate on qubit A, and a CNOT gate with A as the control and B as the target:
+This is straightforward to do and, as a reminder, it can be done by applying a Hadamard gate on qubit A, and a CNOT gate with A as the control and B as the target:
 
 ```python
 circuit.h(qubit1) # Apply Hadamard to Alice's qubit
 circuit.cnot(qubit1, qubit2) # Perform CNOT with Alice's qubit as the control, and Bob's qubit as the target
 ```
 
-*Note*: When we design more intricate quantum algorithms, our circuits will start to look a little messy. Qiskit offers a `.barrier()` method that will allow us to visually separate our gates on our circuits. It does not serve any purpose in the quantum algorithm itself.
+Of course, we can also throw this into a function to keep things neat:
+
+```python
+def bell_pair(circuit, q0, q1): # entangles qubits
+    circuit.h(q0) 
+    circuit.cx(q0, q1) 
+```
+
+*Note*: When we design more intricate quantum algorithms, our circuits will start to look a little messy. Qiskit offers a *.barrier()* method that will allow us to visually separate our gates on our circuits. It does not serve any purpose in the quantum algorithm itself.
 
 Continuing our circuit:
 
