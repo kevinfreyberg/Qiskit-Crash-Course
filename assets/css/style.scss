@@ -1,9 +1,9 @@
 ---
 ---
 
-@import "cayman";
+@import "{{ site.theme }}";
 
-#page-header {
+.page-header {
     background-color: none;
     background-image: none;
     color: #66FCF1;
