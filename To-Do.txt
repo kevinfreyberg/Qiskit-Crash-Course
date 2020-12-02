@@ -1,3 +1,2 @@
--Integrate pictures of different matrix representations for each gate
--Implement more exercises
--Ch4,5,6 WIP
+-Edit CSS
+-Work on Episode VI
