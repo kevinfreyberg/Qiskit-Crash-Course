@@ -11,7 +11,7 @@ The backbone of teleportation is the no-cloning theorem in quantum mechanics, wh
 
 ## The Algorithm
 
-The following snippet outlines the entire algorithm. It might seem slightly esoteric at first, but we will be able to break this down into Qiskit. The goal is to "teleport" |Psi⟩ from Alice to Bob.
+The following snippet outlines the entire algorithm. It might seem slightly esoteric at first, but we will be able to break this down into Qiskit. The goal is to "teleport" `|Psi⟩` from Alice to Bob.
 
 ![image](images/luke.png)
 
