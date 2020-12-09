@@ -53,12 +53,84 @@ To visualize your circuit, you can use *draw()*:
 circuit.draw()
 ```
 
+## Fundamental Gates
+---
+#### Hadamard Gate
+
+The *h()* method takes a qubit as an argument and applies a Hadamard gate to it:
+
+```python
+circuit.h(qubit0) # Applies a Hadamard gate to qubit0
+```
+
+#### X-gate
+
+The *x()* method takes a qubit as an argument and applies an X-gate to it:
+
+```python
+circuit.x(qubit0) # Applies an X-gate to qubit0
+```
+
+#### Y-gate
+
+The *y()* method takes a qubit as an argument and applies a Y-gate to it:
+
+```python
+circuit.y(qubit) # Applies a Y-gate to qubit0
+```
+
+#### Z-gate
+
+The *z()* method takes a qubit as an argument and applies a Z-gate to it:
+
+```python
+circuit.z(qubit) # Applies a Z-gate to qubit0
+```
+
+#### CNOT gate
+
+The *cx()* method takes a control qubit (for the first argument), and a target qubit (for the second argument) and applies a CNOT gate to them:
+
+```python
+circuit.cx(control, target)
+```
+
+#### R(phi)-gate
+
+The *rz()* method takes one qubit and phi radians as arguments and applies an R(phi)-gate to the qubit:
+
+```python
+circuit.rz(phi, qubit) # where phi is in radians
+```
+
+#### S-gate and its conjugate transpose
+
+The *s()* method takes a qubit as an argument and applies an S-gate to it:
+
+```python
+circuit.s(qubit)
+```
+
+The conjugate transpose, the *sdg()* method, also takes a qubit as an argument and applies an S-dagger gate to it:
+
+```python
+circuit.sdg(qubit)
+```
+
+## Entanglement with the Bell Pair function
+
+```python
+def bellPair(circuit, qubit0, qubit1): # entangles qubits
+    circuit.h(qubit0) 
+    circuit.cx(qubit0,qubit1) 
+```
+
 ## Simulator Functions
 ---
 #### Qasm
 
 ```python
-def qasm(circuit):
+def simulateQasm(circuit):
     backend = Aer.get_backend('qasm_simulator') # Loads the qasm simulator
     job = execute(circuit, backend, shots=1024).result().get_counts() # Retrives results from simulation
     return plot_histogram(data)
