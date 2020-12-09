@@ -24,7 +24,11 @@ circuit = QuantumCircuit(qubit0, classic_bit0) # Create a quantum circuit from o
 circuit.h(qubit0) # Applies a Hadamard gate to qubit0
 ```
 
-Recall from seminar that a applying a Hadamard gate to a qubit means that upon measurement, there is an equal chance to observing a 0 or 1. In other words, you have a 50% chance of observing a 0, and a 50% chance to observe a 1. Additionally, the Hadamard gate is the one-qubit instance for the quantum Fourier transform.
+Recall from seminar that applying a Hadamard gate to a qubit means that upon measurement, there is an equal chance to observing a 0 or 1. In other words, the odds are fifty-fifty.
+
+![image](images/han.png)
+
+Additionally, the Hadamard gate is the one-qubit instance for the quantum Fourier transform.
 
 With that being said, the *.h()* method is equivalent to the following code snippet:
 
