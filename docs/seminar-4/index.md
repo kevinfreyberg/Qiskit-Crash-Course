@@ -21,6 +21,10 @@ In simple terms, a Bell pair is an entangled state of two qubits.
 
 The structure of a Bell pair is quite simple. Among two-qubits, it is created by applying a Hadamard gate on the control qubit, and then applying a CNOT gate on the control and target.
 
+So what does it look like on a circuit?
+
+![image](images/bell_pair.png)
+
 Let's try it in Qiskit:
 
 ```python

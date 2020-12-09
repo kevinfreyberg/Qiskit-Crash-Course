@@ -60,7 +60,7 @@ circuit.draw()
 The *h()* method takes a qubit as an argument and applies a Hadamard gate to it:
 
 ```python
-circuit.h(qubit0) # Applies a Hadamard gate to qubit0
+circuit.h(qubit) # Applies a Hadamard gate to qubit
 ```
 
 #### X-gate
@@ -68,7 +68,7 @@ circuit.h(qubit0) # Applies a Hadamard gate to qubit0
 The *x()* method takes a qubit as an argument and applies an X-gate to it:
 
 ```python
-circuit.x(qubit0) # Applies an X-gate to qubit0
+circuit.x(qubit) # Applies an X-gate to qubit
 ```
 
 #### Y-gate
@@ -76,7 +76,7 @@ circuit.x(qubit0) # Applies an X-gate to qubit0
 The *y()* method takes a qubit as an argument and applies a Y-gate to it:
 
 ```python
-circuit.y(qubit) # Applies a Y-gate to qubit0
+circuit.y(qubit) # Applies a Y-gate to qubit
 ```
 
 #### Z-gate
@@ -84,7 +84,7 @@ circuit.y(qubit) # Applies a Y-gate to qubit0
 The *z()* method takes a qubit as an argument and applies a Z-gate to it:
 
 ```python
-circuit.z(qubit) # Applies a Z-gate to qubit0
+circuit.z(qubit) # Applies a Z-gate to qubit
 ```
 
 #### CNOT gate
@@ -92,7 +92,7 @@ circuit.z(qubit) # Applies a Z-gate to qubit0
 The *cx()* method takes a control qubit (for the first argument), and a target qubit (for the second argument) and applies a CNOT gate to them:
 
 ```python
-circuit.cx(control, target)
+circuit.cx(control, target) # Applies a CNOT using the control and target qubits
 ```
 
 #### R(phi)-gate
