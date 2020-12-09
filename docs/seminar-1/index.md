@@ -87,6 +87,10 @@ At this point, we have:
 - Initialized the qubit to a state
 - Performed a Z-measurement
 
+It's time to simulate!
+
+![image](images/lando.png)
+
 ## Simulating
 
 All that's left to do is to simulate our circuit. This is done through *Aer*, a standard Qiskit library. Aer will take our circuit and simulate it as many times as we want (in this case, 1000). 

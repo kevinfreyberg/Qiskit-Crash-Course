@@ -5,7 +5,11 @@ In this chapter, we will introduce the use of multiple qubits and how to manipul
 
 ## The CNOT Gate
 
-This one's important. The CNOT gate works on two qubits, and is the backbone of creating a bell pair. The first qubit is known as the control  and the second qubit as the target. In Qiskit, it is represented by the *.cx()* method:
+The CNOT gate works on two qubits, and is the backbone of creating a Bell pair. 
+
+![image](images/gunray.png)
+
+The first qubit is known as the control  and the second qubit as the target. In Qiskit, it is represented by the *.cx()* method:
 
 ```python
 circuit.cx(control, target)

@@ -137,6 +137,10 @@ circuit.measure(qubit2, c_result) # Measure Bob's qubit to c_result
 simulate(circuit)
 ```
 
+At the very end, our circuit looks like this:
+
+![image](images/circuit.png)
+
 When you run the circuit, you should get a result that looks similar to this:
 
 ![image](images/results.png)

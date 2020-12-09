@@ -33,7 +33,11 @@ Essentially, the "qasm" simulator is used to to emulate a *real* quantum computi
 
 Now, you might be scratching your head and wondering: isn't that the point of this whole thing? Well, this depends on how you want to simulate. On a *real* quantum computer, if you want to observe the states of your qubits during the execution of your program, you would end up destroying them. 
 
-Luckily, we can *cheat* a bit and avoid this. Qiskit offers the statevector simulator, which allows us to look at our qubit states before we measure. You can think of it as a VIP pass to our qubits:
+Luckily, we can *cheat* a bit and avoid this. Qiskit offers the statevector simulator, which allows us to look at our qubit states before we measure. This will ease the development of quantum algorithms as the tool is quite powerful. 
+
+![image](images/palpatine.png)
+
+You can also think of it as a VIP pass to our qubits:
 
 ```python
 backend = Aer.get_backend('statevector_simulator') # Loads the statevector simulator
