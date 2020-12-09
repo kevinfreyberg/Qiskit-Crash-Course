@@ -1,10 +1,10 @@
 # Qiskit Cheatsheet (WIP)
-
+---
 This page is designed to be an example-based reference for using the various Qiskit classes, functions, and methods we have discussed throughout the guide.
 
 ## Circuit Basics
-
-### Qubit Creation
+---
+#### Qubit Creation
 
 The *QuantumRegister* object takes two arguments: the number of qubits you want to use, and a label:
 
@@ -18,7 +18,7 @@ The *ClassicalRegister* object takes two arguments: the number of bits you want 
 classic_bit0 = ClassicalRegister(1, name = "classic_bit0")
 ```
 
-### Circuit Creation
+#### Circuit Creation
 
 The *QuantumCircuit* object takes your *QuantumRegister* and *ClassicalRegister* objects as arguments and creates a circuit:
 
@@ -32,7 +32,7 @@ Alternatively, you can pass in integer values if you do not want to create separ
 circuit = QuantumCircuit(1, 1)
 ```
 
-### Circuit Methods
+#### Circuit Methods
 
 Using your *QuantumCircuit* object, you can initialize your qubit state with the *initialize()* method:
 
@@ -54,8 +54,8 @@ circuit.draw()
 ```
 
 ## Simulator Functions
-
-### Qasm
+---
+#### Qasm
 
 ```python
 def qasm(circuit):
@@ -64,7 +64,7 @@ def qasm(circuit):
     return plot_histogram(data)
 ```
 
-### Statevector Simulator
+#### Statevector Simulator
 
 ```python
 def simulateStateVector(circuit):
@@ -73,7 +73,7 @@ def simulateStateVector(circuit):
     return plot_histogram(data) # Presents data with a histogram
 ```
 
-### Bloch Sphere Simulator
+#### Bloch Sphere Simulator
 
 ```python
 def simulateBlochSphere(circuit):

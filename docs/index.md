@@ -15,7 +15,6 @@ This guide uses Python and it is highly recommended you have at least basic know
 7. Episode VI
 
 The following is designed to be a concise code reference for Qiskit:
-
 [Code Reference (WIP)](https://kevinfreyberg.github.io/Qiskit-Crash-Course/cheat-sheet/)
 
 
