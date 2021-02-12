@@ -17,7 +17,7 @@ This guide uses Python and it is highly recommended you have at least basic know
 The following is designed to be a concise code reference for Qiskit:
 [Code Reference (WIP)](https://kevinfreyberg.github.io/Qiskit-Crash-Course/cheat-sheet/)
 
-
+Special thanks to Dr. Walter O. Krawec and Julia Guskind for their help on bringing the Qiskit Crash Course to life!
 
 
 
