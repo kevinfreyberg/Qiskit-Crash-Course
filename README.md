@@ -15,3 +15,5 @@ import math
 ```
 
 Feel free to import any additional modules if need be.
+
+Special thanks to Dr. Walter O. Krawec and Julia Guskind for their help on bringing the Qiskit Crash Course to life!
