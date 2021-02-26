@@ -1,5 +1,7 @@
 # Welcome to the Qiskit Crash Course!
 
+(Access the guide through: https://kevinfreyberg.github.io/Qiskit-Crash-Course/)
+
 This an introduction to Qiskit, an open-source quantum computing framework from IBM. This guide is inspired by "Learn Quantum Computation using Qiskit" and lectures given by Dr. Walter O. Krawec at the University of Connecticut.
 
 **Important note:**
